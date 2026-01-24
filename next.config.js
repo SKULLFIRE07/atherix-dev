@@ -5,8 +5,7 @@ const nextConfig = {
   images: {
     unoptimized: true,
   },
-  basePath: '/atherix-dev',
-  assetPrefix: '/atherix-dev/',
+  // Custom domain - no basePath needed
 }
 
 module.exports = nextConfig
