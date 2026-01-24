@@ -5,9 +5,8 @@ const nextConfig = {
   images: {
     unoptimized: true,
   },
-  // For GitHub Pages - will be configured based on repo name
-  // basePath: '/repo-name',
-  // assetPrefix: '/repo-name/',
+  basePath: '/atherix-dev',
+  assetPrefix: '/atherix-dev/',
 }
 
 module.exports = nextConfig
