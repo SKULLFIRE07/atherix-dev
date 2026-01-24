@@ -2,7 +2,7 @@
 
 import { cn } from '@/lib/utils'
 import { motion } from 'framer-motion'
-import { ReactNode, ButtonHTMLAttributes, AnchorHTMLAttributes } from 'react'
+import { ReactNode } from 'react'
 
 type ButtonVariant = 'primary' | 'secondary' | 'outline' | 'ghost'
 type ButtonSize = 'sm' | 'md' | 'lg'
@@ -16,17 +16,21 @@ interface ButtonBaseProps {
   iconPosition?: 'left' | 'right'
 }
 
-type ButtonAsButton = ButtonBaseProps &
-  Omit<ButtonHTMLAttributes<HTMLButtonElement>, keyof ButtonBaseProps> & {
-    as?: 'button'
-    href?: never
-  }
+interface ButtonAsButton extends ButtonBaseProps {
+  as?: 'button'
+  href?: never
+  type?: 'button' | 'submit' | 'reset'
+  onClick?: () => void
+  disabled?: boolean
+}
 
-type ButtonAsAnchor = ButtonBaseProps &
-  Omit<AnchorHTMLAttributes<HTMLAnchorElement>, keyof ButtonBaseProps> & {
-    as: 'a'
-    href: string
-  }
+interface ButtonAsAnchor extends ButtonBaseProps {
+  as: 'a'
+  href: string
+  target?: string
+  rel?: string
+  onClick?: () => void
+}
 
 type ButtonProps = ButtonAsButton | ButtonAsAnchor
 
@@ -43,15 +47,16 @@ const sizeStyles: Record<ButtonSize, string> = {
   lg: 'px-8 py-4 text-base',
 }
 
-export function Button({
-  variant = 'primary',
-  size = 'md',
-  children,
-  className,
-  icon,
-  iconPosition = 'right',
-  ...props
-}: ButtonProps) {
+export function Button(props: ButtonProps) {
+  const {
+    variant = 'primary',
+    size = 'md',
+    children,
+    className,
+    icon,
+    iconPosition = 'right',
+  } = props
+
   const baseStyles = cn(
     'inline-flex items-center justify-center gap-2 font-medium rounded-full transition-all duration-200',
     variantStyles[variant],
@@ -68,28 +73,31 @@ export function Button({
   )
 
   if (props.as === 'a') {
-    const { as, ...anchorProps } = props
     return (
       <motion.a
+        href={props.href}
+        target={props.target}
+        rel={props.rel}
+        onClick={props.onClick}
         className={baseStyles}
         whileHover={{ y: -2 }}
         whileTap={{ scale: 0.98 }}
         transition={{ duration: 0.15 }}
-        {...anchorProps}
       >
         {content}
       </motion.a>
     )
   }
 
-  const { as, ...buttonProps } = props as ButtonAsButton
   return (
     <motion.button
+      type={props.type || 'button'}
+      onClick={props.onClick}
+      disabled={props.disabled}
       className={baseStyles}
       whileHover={{ y: -2 }}
       whileTap={{ scale: 0.98 }}
       transition={{ duration: 0.15 }}
-      {...buttonProps}
     >
       {content}
     </motion.button>
