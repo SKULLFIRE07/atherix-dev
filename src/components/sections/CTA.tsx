@@ -3,7 +3,7 @@
 import { motion } from 'framer-motion'
 import { FadeIn } from '@/components/ui/FadeIn'
 import { Button } from '@/components/ui/Button'
-import { ArrowRightIcon } from '@/components/ui/Icons'
+import { ArrowRightIcon, WhatsAppIcon } from '@/components/ui/Icons'
 
 export function CTA() {
   return (
@@ -53,16 +53,30 @@ export function CTA() {
           <p className="text-lg md:text-xl text-text-secondary mb-10 max-w-xl mx-auto leading-relaxed">
             If it involves automation, AI, or complex workflows — we're interested.
           </p>
-          <Button
-            as="a"
-            href="mailto:atherix.dev@gmail.com"
-            variant="primary"
-            size="lg"
-            icon={<ArrowRightIcon className="w-5 h-5" />}
-            className="text-base px-10 py-5 shadow-glow-lg hover:shadow-glow-xl"
-          >
-            Contact us
-          </Button>
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-5">
+            <Button
+              as="a"
+              href="mailto:admin@atherix.dev"
+              variant="primary"
+              size="lg"
+              icon={<ArrowRightIcon className="w-5 h-5" />}
+              className="text-base px-10 py-5 shadow-glow-lg hover:shadow-glow-xl"
+            >
+              Contact us
+            </Button>
+            <Button
+              as="a"
+              href="https://wa.me/918788245978"
+              target="_blank"
+              rel="noopener noreferrer"
+              variant="secondary"
+              size="lg"
+              icon={<WhatsAppIcon className="w-5 h-5" />}
+              className="text-base px-10 py-5"
+            >
+              WhatsApp
+            </Button>
+          </div>
         </FadeIn>
       </div>
     </section>
