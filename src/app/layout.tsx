@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { Inter, Space_Grotesk, JetBrains_Mono } from 'next/font/google'
 import { GoogleAnalytics } from '@/components/GoogleAnalytics'
+import { ScrollToTop } from '@/components/ScrollToTop'
 import './globals.css'
 
 const inter = Inter({
@@ -52,6 +53,7 @@ export default function RootLayout({
     >
       <body className="font-sans">
         <GoogleAnalytics />
+        <ScrollToTop />
         {/* Noise Overlay */}
         <div className="noise-overlay" aria-hidden="true" />
 

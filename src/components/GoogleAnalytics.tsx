@@ -2,13 +2,10 @@
 
 import Script from 'next/script'
 
-const GA_MEASUREMENT_ID = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID
+// Hardcoded for static export (GitHub Pages)
+const GA_MEASUREMENT_ID = 'G-X3P7D6DLL0'
 
 export function GoogleAnalytics() {
-  if (!GA_MEASUREMENT_ID) {
-    return null
-  }
-
   return (
     <>
       <Script
