@@ -35,10 +35,10 @@ interface ButtonAsAnchor extends ButtonBaseProps {
 type ButtonProps = ButtonAsButton | ButtonAsAnchor
 
 const variantStyles: Record<ButtonVariant, string> = {
-  primary: 'bg-white text-bg-primary hover:bg-white/90',
-  secondary: 'bg-transparent text-text-secondary border border-border hover:text-text-primary hover:border-border-hover hover:bg-bg-card',
-  outline: 'bg-transparent text-text-primary border border-border hover:border-border-hover hover:bg-bg-card',
-  ghost: 'bg-transparent text-text-secondary hover:text-text-primary hover:bg-bg-card',
+  primary: '',
+  secondary: 'opacity-90',
+  outline: 'opacity-90',
+  ghost: 'bg-transparent border border-transparent hover:bg-white/10 hover:border-white/25',
 }
 
 const sizeStyles: Record<ButtonSize, string> = {
@@ -59,6 +59,10 @@ export function Button(props: ButtonProps) {
 
   const baseStyles = cn(
     'inline-flex items-center justify-center gap-2 font-medium rounded-full transition-all duration-200',
+    // White glassmorphism base
+    'relative overflow-hidden bg-white/10 text-white border border-white/20 shadow-[0_0_0_1px_rgba(255,255,255,0.08)] backdrop-blur-md',
+    'hover:bg-white/15 hover:border-white/30 hover:shadow-[0_0_30px_rgba(255,255,255,0.25)]',
+    'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/40 focus-visible:ring-offset-0',
     variantStyles[variant],
     sizeStyles[size],
     className

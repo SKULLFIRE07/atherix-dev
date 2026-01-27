@@ -15,7 +15,7 @@ const footerLinks = [
 
 export function Footer() {
   return (
-    <footer className="py-20 border-t border-border bg-bg-secondary">
+    <footer className="py-20 bg-black relative z-10">
       <div className="container-custom">
         <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-10">
           {/* Brand */}
@@ -49,7 +49,7 @@ export function Footer() {
                 href={social.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-11 h-11 rounded-full bg-bg-card border border-border flex items-center justify-center text-text-tertiary hover:text-text-primary hover:border-accent-purple/50 hover:shadow-glow-sm transition-all duration-300"
+                className="w-11 h-11 rounded-full bg-bg-card border border-border flex items-center justify-center text-text-tertiary hover:text-text-primary hover:border-accent-blue/50 hover:shadow-glow-sm transition-all duration-300"
                 aria-label={social.label}
               >
                 <social.icon className="w-5 h-5" />
@@ -59,9 +59,13 @@ export function Footer() {
         </div>
 
         {/* Bottom */}
-        <div className="mt-16 pt-8 border-t border-border flex flex-col md:flex-row md:items-center md:justify-between gap-4 text-sm text-text-muted">
-          <p>Pioneers in AI technology. Building tomorrow, today.</p>
-          <p>&copy; {new Date().getFullYear()} Atherix.dev — All rights reserved</p>
+        <div className="mt-16 pt-8 flex flex-col md:flex-row md:items-center md:justify-between gap-4 text-sm text-text-muted">
+          <p className="font-mono">
+            <span className="text-accent-green">//</span> Pioneers in AI technology. Building tomorrow, today.
+          </p>
+          <p className="font-mono">
+            <span className="text-accent-blue">&copy;</span> {new Date().getFullYear()} Atherix.dev <span className="text-accent-green">—</span> All rights reserved
+          </p>
         </div>
       </div>
     </footer>

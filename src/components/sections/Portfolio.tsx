@@ -5,7 +5,7 @@ import { motion, AnimatePresence } from 'framer-motion'
 import { FadeIn, StaggerChildren, StaggerItem } from '@/components/ui/FadeIn'
 import { Button } from '@/components/ui/Button'
 import {
-  MusicIcon,
+  ClothIcon,
   SparklesIcon,
   MessageIcon,
   MapPinIcon,
@@ -14,16 +14,17 @@ import {
   ScanIcon,
   WorkflowIcon,
   ArrowRightIcon,
+  ExternalLinkIcon,
 } from '@/components/ui/Icons'
 
 const projects = [
   {
     id: 1,
-    icon: MusicIcon,
-    title: 'Spotify Cloth Try-On Plugin',
+    icon: ClothIcon,
+    title: 'Shopify Cloth Try-On Plugin',
     category: 'AI Integration',
-    description: 'Custom Spotify plugin with ML-powered virtual cloth try-on, enabling seamless platform integration with real-time AR visualization.',
-    techStack: ['Spotify SDK', 'TensorFlow', 'ARCore', 'Python', 'REST APIs'],
+    description: 'Custom Shopify app with ML-powered virtual cloth try-on, enabling seamless storefront integration with real-time AR visualization.',
+    techStack: ['Shopify', 'TensorFlow', 'ARCore', 'Python', 'REST APIs'],
     metrics: [
       { label: 'Latency', value: '<50ms' },
       { label: 'Accuracy', value: '94%' },
@@ -80,7 +81,7 @@ const projects = [
     category: 'Location Intelligence',
     description: 'Real-time geolocation platform discovering nearby EV charging stations with route optimization, availability status, and booking integration.',
     techStack: ['Google Maps API', 'React', 'Node.js', 'WebSocket', 'AWS'],
-    link: 'evchargingstationnearme.in',
+    link: 'https://evchargingstationnearme.in',
     metrics: [
       { label: 'Stations', value: '25K+' },
       { label: 'Accuracy', value: '99%' },
@@ -144,23 +145,27 @@ export function Portfolio() {
     : projects.filter(p => p.category === activeCategory)
 
   return (
-    <section id="portfolio" className="section relative overflow-hidden">
+    <section id="portfolio" className="section relative overflow-hidden bg-black">
       {/* Background Elements */}
       <div className="absolute inset-0 -z-10">
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-accent-purple/5 rounded-full blur-3xl" />
-        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-accent-cyan/5 rounded-full blur-3xl" />
+        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-accent-blue/8 rounded-full blur-3xl" />
+        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-accent-green/8 rounded-full blur-3xl" />
       </div>
 
       <div className="container-custom">
         {/* Header */}
         <FadeIn className="text-center mb-16">
-          <span className="section-tag">Our Work</span>
+          <span className="section-tag">
+            <span className="font-mono text-accent-green">class</span> Projects <span className="font-mono text-accent-blue">extends</span> Production
+          </span>
           <h2 className="section-title">
+            <span className="font-mono text-accent-green text-2xl mr-3">{'<'}</span>
             Projects that{' '}
-            <span className="gradient-text">ship & scale</span>
+            <span className="gradient-text terminal-glow">ship & scale</span>
+            <span className="font-mono text-accent-green text-2xl ml-3">{'/>'}</span>
           </h2>
           <p className="mt-6 text-lg text-text-secondary max-w-3xl mx-auto">
-            From AI-powered platforms to industrial computer vision systems—we build production-grade solutions that deliver measurable impact.
+            <span className="font-mono text-accent-green">//</span> From AI-powered platforms to industrial computer vision systems—we build production-grade solutions that deliver measurable impact.
           </p>
         </FadeIn>
 
@@ -173,7 +178,7 @@ export function Portfolio() {
                 onClick={() => setActiveCategory(category)}
                 className={`px-4 py-2 text-sm font-medium rounded-full transition-all duration-300 ${
                   activeCategory === category
-                    ? 'bg-gradient-to-r from-accent-purple to-accent-cyan text-white shadow-lg shadow-accent-purple/25'
+                    ? 'bg-white/15 text-white border border-white/30 shadow-[0_0_20px_rgba(255,255,255,0.3)] backdrop-blur-md'
                     : 'bg-bg-card border border-border text-text-secondary hover:text-text-primary hover:border-border-hover'
                 }`}
               >
@@ -200,12 +205,12 @@ export function Portfolio() {
                     onMouseEnter={() => setHoveredProject(project.id)}
                     onMouseLeave={() => setHoveredProject(null)}
                   >
-                    <div className="card h-full border-gradient overflow-hidden">
+                    <div className="card h-full border-gradient overflow-hidden relative">
                       {/* Gradient Overlay on Hover */}
-                      <div className={`absolute inset-0 bg-gradient-to-br ${project.gradient} opacity-0 group-hover:opacity-5 transition-opacity duration-500`} />
+                      <div className={`pointer-events-none absolute inset-0 bg-gradient-to-br ${project.gradient} opacity-0 group-hover:opacity-5 transition-opacity duration-500`} />
 
                       {/* Top Section */}
-                      <div className="flex items-start justify-between mb-6">
+                      <div className="relative z-10 flex items-start justify-between mb-6">
                         <div className="flex items-center gap-4">
                           {/* Icon */}
                           <div className={`w-14 h-14 rounded-xl bg-gradient-to-br ${project.gradient} bg-opacity-20 flex items-center justify-center group-hover:scale-110 transition-transform duration-500`}>
@@ -223,10 +228,17 @@ export function Portfolio() {
 
                         {/* Live Domain Badge */}
                         {project.link && (
-                          <span className="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-bg-elevated border border-border text-xs font-mono text-text-secondary">
+                          <a
+                            href={project.link}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            title="Open live project"
+                            className="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-bg-elevated border border-border text-xs font-mono text-text-secondary hover:border-border-hover hover:text-text-primary transition-colors duration-200 cursor-pointer relative z-20"
+                          >
                             <span className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse" />
-                            {project.link}
-                          </span>
+                            <span>{project.link.replace(/^https?:\/\//, '')}</span>
+                            <ExternalLinkIcon className="w-3 h-3 opacity-70 group-hover:opacity-100" />
+                          </a>
                         )}
                       </div>
 

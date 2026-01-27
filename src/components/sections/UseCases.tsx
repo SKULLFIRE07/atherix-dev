@@ -23,12 +23,20 @@ const useCases = [
 
 export function UseCases() {
   return (
-    <section className="section bg-bg-secondary border-y border-border">
+    <section className="section bg-black">
       <div className="container-custom">
         {/* Header */}
         <FadeIn className="mb-16">
-          <span className="section-tag">Use Cases</span>
-          <h2 className="section-title">What teams are building</h2>
+          <span className="section-tag">
+            <span className="font-mono text-accent-green">interface</span> UseCases <span className="font-mono text-accent-blue">{'{'}</span>
+          </span>
+          <h2 className="section-title">
+            <span className="font-mono text-accent-blue text-2xl mr-3">const</span>
+            What teams are building
+          </h2>
+          <p className="section-intro mx-auto mt-4">
+            <span className="font-mono text-accent-green">//</span> Real-world AI implementations in production
+          </p>
         </FadeIn>
 
         {/* Use Cases List */}
@@ -37,7 +45,7 @@ export function UseCases() {
             <StaggerItem key={useCase.title}>
               <div className="group flex flex-col md:flex-row md:items-center gap-4 p-6 bg-bg-card border border-border rounded-xl hover:border-border-hover transition-colors">
                 <div className="flex-1">
-                  <h3 className="font-display text-lg font-medium mb-1 group-hover:text-accent-purple transition-colors">
+                  <h3 className="font-display text-lg font-medium mb-1 group-hover:text-accent-blue transition-colors">
                     {useCase.title}
                   </h3>
                   <p className="text-sm text-text-secondary">

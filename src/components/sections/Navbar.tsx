@@ -41,10 +41,10 @@ export function Navbar() {
         animate={{ y: 0 }}
         transition={{ duration: 0.5, ease: [0.25, 0.1, 0.25, 1] }}
         className={cn(
-          'fixed top-0 left-0 right-0 z-50 transition-all duration-300',
+          'fixed top-0 left-0 right-0 z-50 backdrop-blur-xl transition-all duration-300',
           isScrolled
-            ? 'bg-bg-primary/80 backdrop-blur-xl border-b border-border'
-            : 'bg-transparent'
+            ? 'bg-bg-primary/85'
+            : 'bg-bg-primary/40'
         )}
       >
         <div className="container-custom">
@@ -65,7 +65,7 @@ export function Navbar() {
                   className="text-sm text-text-secondary hover:text-text-primary transition-colors duration-200 relative group"
                 >
                   {link.label}
-                  <span className="absolute -bottom-1 left-0 w-0 h-px bg-gradient-to-r from-accent-purple to-accent-cyan group-hover:w-full transition-all duration-300" />
+                  <span className="absolute -bottom-1 left-0 w-0 h-px bg-gradient-to-r from-accent-blue to-accent-green group-hover:w-full transition-all duration-300" />
                 </a>
               ))}
             </div>
