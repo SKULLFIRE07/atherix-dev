@@ -14,7 +14,6 @@ import {
   ScanIcon,
   WorkflowIcon,
   ArrowRightIcon,
-  ExternalLinkIcon,
 } from '@/components/ui/Icons'
 
 const projects = [
@@ -222,16 +221,12 @@ export function Portfolio() {
                           </div>
                         </div>
 
-                        {/* Link Icon */}
+                        {/* Live Domain Badge */}
                         {project.link && (
-                          <a
-                            href={`https://${project.link}`}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="p-2 rounded-lg bg-bg-elevated hover:bg-bg-tertiary transition-colors"
-                          >
-                            <ExternalLinkIcon className="w-4 h-4 text-text-secondary" />
-                          </a>
+                          <span className="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-bg-elevated border border-border text-xs font-mono text-text-secondary">
+                            <span className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse" />
+                            {project.link}
+                          </span>
                         )}
                       </div>
 
