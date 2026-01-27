@@ -176,12 +176,19 @@ export function WhatsAppIcon({ className }: IconProps) {
   )
 }
 
-export function MusicIcon({ className, strokeWidth = 1.5 }: IconProps) {
+export function ClothIcon({ className, strokeWidth = 1.5 }: IconProps) {
   return (
-    <svg className={cn('w-6 h-6', className)} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={strokeWidth}>
-      <circle cx="5.5" cy="17.5" r="2.5" />
-      <circle cx="17.5" cy="15.5" r="2.5" />
-      <path d="M8 17.5V5l12-2v12.5" />
+    <svg
+      className={cn('w-6 h-6', className)}
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth={strokeWidth}
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      <path d="M9 3.5L12 2l3 1.5 2.5-.5 1.5 3L17 7.5V19a1 1 0 01-1 1H8a1 1 0 01-1-1V7.5L4 6l1.5-3 2.5.5z" />
+      <path d="M10 7l2 1.5L14 7" />
     </svg>
   )
 }

@@ -1,6 +1,7 @@
 export { Navbar } from './Navbar'
 export { Hero } from './Hero'
 export { TrustStrip } from './TrustStrip'
+export { CodeShowcase } from './CodeShowcase'
 export { WhatWeBuild } from './WhatWeBuild'
 export { Portfolio } from './Portfolio'
 export { HowItWorks } from './HowItWorks'

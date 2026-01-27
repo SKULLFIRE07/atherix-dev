@@ -23,14 +23,17 @@ const stacks = [
 
 export function TechStack() {
   return (
-    <section id="tech-stack" className="section">
+    <section id="tech-stack" className="section bg-black">
       <div className="container-custom">
         {/* Header */}
         <FadeIn className="mb-20 text-center">
           <span className="section-tag">Tech Stack</span>
-          <h2 className="section-title">Built on proven foundations</h2>
+          <h2 className="section-title">
+            <span className="font-mono text-accent-green text-2xl mr-3">&gt;</span>
+            Built on proven foundations
+          </h2>
           <p className="section-intro mx-auto mt-6">
-            No icons. No hype. Just facts.
+            <span className="font-mono text-accent-green">//</span> No icons. No hype. Just facts.
           </p>
         </FadeIn>
 
@@ -39,7 +42,8 @@ export function TechStack() {
           {stacks.map((stack) => (
             <StaggerItem key={stack.category}>
               <div className="text-center group">
-                <h3 className="font-display text-xl font-semibold text-text-primary mb-6 group-hover:text-accent-purple transition-colors duration-300">
+                <h3 className="font-display text-xl font-semibold text-text-primary mb-6 group-hover:text-accent-blue transition-colors duration-300">
+                  <span className="font-mono text-accent-green text-sm mr-2">$</span>
                   {stack.category}
                 </h3>
                 <ul className="space-y-3">
@@ -48,6 +52,7 @@ export function TechStack() {
                       key={item}
                       className="font-mono text-base text-text-tertiary group-hover:text-text-secondary transition-colors duration-300"
                     >
+                      <span className="text-accent-blue mr-2">•</span>
                       {item}
                     </li>
                   ))}
