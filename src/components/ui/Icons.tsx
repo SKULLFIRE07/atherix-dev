@@ -175,3 +175,95 @@ export function WhatsAppIcon({ className }: IconProps) {
     </svg>
   )
 }
+
+export function MusicIcon({ className, strokeWidth = 1.5 }: IconProps) {
+  return (
+    <svg className={cn('w-6 h-6', className)} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={strokeWidth}>
+      <circle cx="5.5" cy="17.5" r="2.5" />
+      <circle cx="17.5" cy="15.5" r="2.5" />
+      <path d="M8 17.5V5l12-2v12.5" />
+    </svg>
+  )
+}
+
+export function SparklesIcon({ className, strokeWidth = 1.5 }: IconProps) {
+  return (
+    <svg className={cn('w-6 h-6', className)} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={strokeWidth}>
+      <path d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707" />
+      <path d="M12 8l1.5 3 3.5.5-2.5 2.5.5 3.5-3-1.5-3 1.5.5-3.5-2.5-2.5 3.5-.5L12 8z" />
+    </svg>
+  )
+}
+
+export function MessageIcon({ className, strokeWidth = 1.5 }: IconProps) {
+  return (
+    <svg className={cn('w-6 h-6', className)} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={strokeWidth}>
+      <path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z" />
+    </svg>
+  )
+}
+
+export function MapPinIcon({ className, strokeWidth = 1.5 }: IconProps) {
+  return (
+    <svg className={cn('w-6 h-6', className)} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={strokeWidth}>
+      <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" />
+      <circle cx="12" cy="10" r="3" />
+    </svg>
+  )
+}
+
+export function ZapIcon({ className, strokeWidth = 1.5 }: IconProps) {
+  return (
+    <svg className={cn('w-6 h-6', className)} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={strokeWidth}>
+      <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" />
+    </svg>
+  )
+}
+
+export function ImageIcon({ className, strokeWidth = 1.5 }: IconProps) {
+  return (
+    <svg className={cn('w-6 h-6', className)} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={strokeWidth}>
+      <rect x="3" y="3" width="18" height="18" rx="2" />
+      <circle cx="8.5" cy="8.5" r="1.5" />
+      <path d="M21 15l-5-5L5 21" />
+    </svg>
+  )
+}
+
+export function GamepadIcon({ className, strokeWidth = 1.5 }: IconProps) {
+  return (
+    <svg className={cn('w-6 h-6', className)} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={strokeWidth}>
+      <line x1="6" y1="12" x2="10" y2="12" />
+      <line x1="8" y1="10" x2="8" y2="14" />
+      <circle cx="15" cy="13" r="1" />
+      <circle cx="18" cy="11" r="1" />
+      <rect x="2" y="6" width="20" height="12" rx="2" />
+    </svg>
+  )
+}
+
+export function ScanIcon({ className, strokeWidth = 1.5 }: IconProps) {
+  return (
+    <svg className={cn('w-6 h-6', className)} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={strokeWidth}>
+      <path d="M3 7V5a2 2 0 012-2h2" />
+      <path d="M17 3h2a2 2 0 012 2v2" />
+      <path d="M21 17v2a2 2 0 01-2 2h-2" />
+      <path d="M7 21H5a2 2 0 01-2-2v-2" />
+      <circle cx="12" cy="12" r="3" />
+      <path d="M12 8v1" />
+      <path d="M12 15v1" />
+      <path d="M16 12h-1" />
+      <path d="M9 12H8" />
+    </svg>
+  )
+}
+
+export function ExternalLinkIcon({ className, strokeWidth = 1.5 }: IconProps) {
+  return (
+    <svg className={cn('w-4 h-4', className)} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={strokeWidth}>
+      <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6" />
+      <polyline points="15,3 21,3 21,9" />
+      <line x1="10" y1="14" x2="21" y2="3" />
+    </svg>
+  )
+}

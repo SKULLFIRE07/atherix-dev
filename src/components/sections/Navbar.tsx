@@ -7,10 +7,10 @@ import { Button } from '@/components/ui/Button'
 import { MenuIcon, CloseIcon } from '@/components/ui/Icons'
 
 const navLinks = [
-  { href: '#what-we-build', label: 'Product' },
-  { href: '#how-it-works', label: 'Solutions' },
-  { href: '#tech-stack', label: 'Developers' },
-  { href: '#contact', label: 'Company' },
+  { href: '#what-we-build', label: 'Services' },
+  { href: '#portfolio', label: 'Portfolio' },
+  { href: '#how-it-works', label: 'Process' },
+  { href: '#tech-stack', label: 'Tech Stack' },
 ]
 
 export function Navbar() {

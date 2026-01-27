@@ -3,6 +3,7 @@ import {
   Hero,
   TrustStrip,
   WhatWeBuild,
+  Portfolio,
   HowItWorks,
   TechStack,
   UseCases,
@@ -18,6 +19,7 @@ export default function Home() {
         <Hero />
         <TrustStrip />
         <WhatWeBuild />
+        <Portfolio />
         <HowItWorks />
         <TechStack />
         <UseCases />
