@@ -100,15 +100,16 @@
     @apply hover:border-border-hover hover:bg-white/[0.02] hover:shadow-glow-sm;
   }
 
-  /* Cards - Deeper & More Premium */
+  /* Cards - Premium look with optimized performance */
   .card {
-    @apply p-8 bg-bg-card/80 backdrop-blur-sm border border-border rounded-2xl;
-    @apply transition-all duration-500 ease-out-expo;
+    @apply p-8 bg-bg-card border border-border rounded-2xl;
+    @apply transition-all duration-300;
   }
 
   .card:hover {
-    @apply border-border-hover -translate-y-2 shadow-glow-md;
-    background: linear-gradient(135deg, rgba(7, 7, 7, 0.9) 0%, rgba(10, 10, 10, 0.9) 100%);
+    @apply border-border-hover -translate-y-1;
+    background: rgba(10, 10, 10, 0.95);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
   }
 
   /* Section headers - Refined */
@@ -129,11 +130,6 @@
    UTILITY STYLES - ENHANCED EFFECTS
    ============================================ */
 @layer utilities {
-  /* Noise overlay - Subtle */
-  .noise-overlay {
-    @apply fixed inset-0 pointer-events-none z-50 opacity-[0.015];
-    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
-  }
 
   /* Enhanced glow effects */
   .glow-blue {
@@ -225,8 +221,7 @@
     mix-blend-mode: screen;
   }
 
-  /* Force all accent-colored text to white.
-     Glow intensity is controlled by the `glow-active` class on <html>. */
+  /* Accent text colors */
   .text-accent-blue,
   .text-accent-orange,
   .text-accent-green,
@@ -234,39 +229,14 @@
   .text-accent-pink,
   .text-accent-red {
     color: #ffffff !important;
-    transition: text-shadow 320ms cubic-bezier(0.16, 1, 0.3, 1);
   }
 
-  html.glow-active .text-accent-blue,
-  html.glow-active .text-accent-orange,
-  html.glow-active .text-accent-green,
-  html.glow-active .text-accent-yellow,
-  html.glow-active .text-accent-pink,
-  html.glow-active .text-accent-red {
-    opacity: 1;
-    text-shadow:
-      0 0 12px rgba(255, 255, 255, 0.6),
-      0 0 28px rgba(255, 255, 255, 0.35),
-      0 0 48px rgba(255, 255, 255, 0.22);
-  }
-
-  /* Gradient text becomes white glowing text */
+  /* Gradient text */
   .gradient-text,
   .gradient-text-animated {
     color: #ffffff !important;
     -webkit-text-fill-color: #ffffff;
     background-image: none !important;
-    transition:
-      text-shadow 320ms cubic-bezier(0.16, 1, 0.3, 1),
-      clip-path 320ms cubic-bezier(0.16, 1, 0.3, 1);
-  }
-
-  html.glow-active .gradient-text,
-  html.glow-active .gradient-text-animated {
-    text-shadow:
-      0 0 14px rgba(255, 255, 255, 0.7),
-      0 0 32px rgba(255, 255, 255, 0.4),
-      0 0 52px rgba(255, 255, 255, 0.25);
   }
 }
 
@@ -334,15 +304,9 @@
 /* ============================================
    TERMINAL DARK SPECIFIC STYLES
    ============================================ */
-/* Code-like cursor blink */
-@keyframes cursor-blink {
-  0%, 49% { opacity: 1; }
-  50%, 100% { opacity: 0; }
-}
-
+/* Code-like cursor */
 .cursor-blink::after {
   content: '|';
-  animation: cursor-blink 1s infinite;
   margin-left: 2px;
   color: #569CD6;
 }
@@ -428,65 +392,21 @@
   font-variant-numeric: tabular-nums;
 }
 
-/* Glowing terminal text - softer white glow */
+/* Terminal glow - static for performance */
 .terminal-glow {
   text-shadow:
-    0 0 8px rgba(255, 255, 255, 0.55),
-    0 0 18px rgba(255, 255, 255, 0.35),
-    0 0 32px rgba(255, 255, 255, 0.22);
-  animation: glow-pulse 4s ease-in-out infinite;
+    0 0 10px rgba(255, 255, 255, 0.6),
+    0 0 20px rgba(255, 255, 255, 0.4),
+    0 0 40px rgba(255, 255, 255, 0.2);
 }
 
-@keyframes glow-pulse {
-  0%, 100% {
-    text-shadow:
-      0 0 8px rgba(255, 255, 255, 0.55),
-      0 0 18px rgba(255, 255, 255, 0.35),
-      0 0 32px rgba(255, 255, 255, 0.22);
-  }
-  50% {
-    text-shadow:
-      0 0 10px rgba(255, 255, 255, 0.7),
-      0 0 24px rgba(255, 255, 255, 0.4),
-      0 0 40px rgba(255, 255, 255, 0.25);
-  }
-}
 
-/* Scanline effect for CRT terminal feel */
-@keyframes scanline {
-  0% { transform: translateY(-100%); }
-  100% { transform: translateY(100%); }
-}
-
-.scanline-effect {
-  position: relative;
-  overflow: hidden;
-}
-
-.scanline-effect::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 2px;
-  background: rgba(86, 156, 214, 0.1);
-  animation: scanline 8s linear infinite;
-  pointer-events: none;
-}
-
-/* Terminal prompt animation */
-@keyframes prompt-blink {
-  0%, 50% { opacity: 1; }
-  51%, 100% { opacity: 0; }
-}
-
+/* Terminal prompt cursor - static */
 .prompt-cursor {
   display: inline-block;
   width: 8px;
   height: 1.2em;
   background: #569CD6;
-  animation: prompt-blink 1s infinite;
   margin-left: 2px;
   vertical-align: text-bottom;
 }
