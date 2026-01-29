@@ -25,10 +25,6 @@ const projects = [
     category: 'AI Integration',
     description: 'Custom Shopify app with ML-powered virtual cloth try-on, enabling seamless storefront integration with real-time AR visualization.',
     techStack: ['Shopify', 'TensorFlow', 'ARCore', 'Python', 'REST APIs'],
-    metrics: [
-      { label: 'Latency', value: '<50ms' },
-      { label: 'Accuracy', value: '94%' },
-    ],
     gradient: 'from-green-500 to-emerald-600',
     accentColor: 'text-green-400',
   },
@@ -39,10 +35,6 @@ const projects = [
     category: 'Generative AI',
     description: 'AI-powered wrapper that generates production-ready mobile apps and websites from a single natural language prompt using LLM orchestration.',
     techStack: ['GPT-4', 'React Native', 'Next.js', 'LangChain', 'Vercel'],
-    metrics: [
-      { label: 'Build Time', value: '<2min' },
-      { label: 'Code Quality', value: '98%' },
-    ],
     gradient: 'from-violet-500 to-purple-600',
     accentColor: 'text-violet-400',
   },
@@ -53,10 +45,6 @@ const projects = [
     category: 'Data Engineering',
     description: 'Automated data extraction pipeline that intelligently scrapes LinkedIn profiles based on job roles, skills, and custom criteria with anti-detection.',
     techStack: ['Puppeteer', 'Node.js', 'PostgreSQL', 'Redis', 'Docker'],
-    metrics: [
-      { label: 'Profiles/hr', value: '10K+' },
-      { label: 'Uptime', value: '99.9%' },
-    ],
     gradient: 'from-blue-500 to-cyan-600',
     accentColor: 'text-blue-400',
   },
@@ -67,10 +55,6 @@ const projects = [
     category: 'Conversational AI',
     description: 'Intelligent WhatsApp bot generating personalized diet plans using NLP, nutritional databases, and user health profiles with multi-turn conversations.',
     techStack: ['WhatsApp API', 'OpenAI', 'MongoDB', 'FastAPI', 'Twilio'],
-    metrics: [
-      { label: 'Users', value: '50K+' },
-      { label: 'Response', value: '<3s' },
-    ],
     gradient: 'from-emerald-500 to-teal-600',
     accentColor: 'text-emerald-400',
   },
@@ -82,10 +66,6 @@ const projects = [
     description: 'Real-time geolocation platform discovering nearby EV charging stations with route optimization, availability status, and booking integration.',
     techStack: ['Google Maps API', 'React', 'Node.js', 'WebSocket', 'AWS'],
     link: 'https://evchargingstationnearme.in',
-    metrics: [
-      { label: 'Stations', value: '25K+' },
-      { label: 'Accuracy', value: '99%' },
-    ],
     gradient: 'from-amber-500 to-orange-600',
     accentColor: 'text-amber-400',
   },
@@ -96,10 +76,6 @@ const projects = [
     category: 'Computer Vision',
     description: 'End-to-end AI system generating complete product branding—name, theme, visuals, tone, and marketing copy—from a single product image input.',
     techStack: ['Stable Diffusion', 'CLIP', 'GPT-4V', 'Python', 'FastAPI'],
-    metrics: [
-      { label: 'Generation', value: '<30s' },
-      { label: 'Variations', value: '50+' },
-    ],
     gradient: 'from-pink-500 to-rose-600',
     accentColor: 'text-pink-400',
   },
@@ -110,10 +86,6 @@ const projects = [
     category: 'Full-Stack SaaS',
     description: 'Complete platform for gaming café management—seat booking, time tracking, resource utilization analytics, and automated billing with real-time availability.',
     techStack: ['React', 'Node.js', 'PostgreSQL', 'Stripe', 'Socket.io'],
-    metrics: [
-      { label: 'Bookings/day', value: '5K+' },
-      { label: 'Efficiency', value: '+40%' },
-    ],
     gradient: 'from-indigo-500 to-blue-600',
     accentColor: 'text-indigo-400',
   },
@@ -125,10 +97,6 @@ const projects = [
     category: 'Industrial AI',
     description: 'Real-time computer vision solution for manufacturing defect detection with 99.7% accuracy, reducing quality control costs and improving throughput.',
     techStack: ['YOLOv8', 'OpenCV', 'TensorRT', 'NVIDIA Jetson', 'C++'],
-    metrics: [
-      { label: 'Accuracy', value: '99.7%' },
-      { label: 'FPS', value: '60+' },
-    ],
     gradient: 'from-red-500 to-orange-600',
     accentColor: 'text-red-400',
   },
@@ -253,7 +221,7 @@ export function Portfolio() {
                       </p>
 
                       {/* Tech Stack */}
-                      <div className="flex flex-wrap gap-2 mb-6">
+                      <div className="flex flex-wrap gap-2">
                         {project.techStack.map((tech) => (
                           <span
                             key={tech}
@@ -261,20 +229,6 @@ export function Portfolio() {
                           >
                             {tech}
                           </span>
-                        ))}
-                      </div>
-
-                      {/* Metrics */}
-                      <div className="flex gap-6 pt-6 border-t border-border">
-                        {project.metrics.map((metric) => (
-                          <div key={metric.label}>
-                            <div className={`text-xl lg:text-2xl font-display font-bold ${project.accentColor}`}>
-                              {metric.value}
-                            </div>
-                            <div className="text-xs text-text-muted uppercase tracking-wider">
-                              {metric.label}
-                            </div>
-                          </div>
                         ))}
                       </div>
 
