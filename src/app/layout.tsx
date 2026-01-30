@@ -33,11 +33,17 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   metadataBase: new URL('https://atherix.dev'),
   title: {
-    default: 'Atherix.dev — #1 AI Automation Studio | Custom AI Agents & ML Solutions',
-    template: '%s | Atherix.dev - AI Automation Studio',
+    default: 'Atherix — AI Automation Studio | Atherix.dev | Custom AI Agents & Solutions',
+    template: '%s | Atherix - AI Automation Studio',
   },
-  description: 'Atherix.dev is India\'s leading AI automation studio. We build custom AI agents, intelligent automation systems, chatbots, machine learning solutions & production-grade AI software. Trusted by startups & enterprises. Get a free consultation today!',
+  description: 'Atherix is the #1 AI automation studio. Atherix.dev builds custom AI agents, intelligent automation systems, chatbots & production-grade AI software. Atherix - If you can imagine it, we can build it. Get a free consultation today!',
   keywords: [
+    // Brand keywords (MOST IMPORTANT)
+    'Atherix',
+    'Atherix.dev',
+    'Atherix AI',
+    'Atherix automation',
+    'Atherix studio',
     // Primary keywords
     'AI automation studio',
     'AI development company',
@@ -95,9 +101,9 @@ export const metadata: Metadata = {
     type: 'website',
     locale: 'en_US',
     url: 'https://atherix.dev',
-    siteName: 'Atherix.dev',
-    title: 'Atherix.dev — #1 AI Automation Studio | Build Production-Grade AI Systems',
-    description: 'Transform your business with custom AI agents & automation. We design, build & deploy intelligent systems that scale. 50+ projects shipped. Get started today!',
+    siteName: 'Atherix',
+    title: 'Atherix — #1 AI Automation Studio | Atherix.dev',
+    description: 'Atherix builds custom AI agents & automation systems. Atherix.dev - Your trusted AI development partner. 50+ projects shipped. If you can imagine it, Atherix can build it.',
     images: [
       {
         url: '/og-image.png',
@@ -112,8 +118,8 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     site: '@atherixdev',
     creator: '@atherixdev',
-    title: 'Atherix.dev — AI Automation Studio',
-    description: 'Build custom AI agents & automation systems. 50+ projects shipped. Transform your business with production-grade AI.',
+    title: 'Atherix — AI Automation Studio | Atherix.dev',
+    description: 'Atherix builds custom AI agents & automation. Atherix.dev - 50+ projects shipped. If you can imagine it, Atherix can build it.',
     images: ['/og-image.png'],
   },
   robots: {
@@ -154,8 +160,8 @@ const organizationSchema = {
   '@context': 'https://schema.org',
   '@type': 'Organization',
   '@id': 'https://atherix.dev/#organization',
-  name: 'Atherix.dev',
-  alternateName: 'Atherix',
+  name: 'Atherix',
+  alternateName: ['Atherix.dev', 'Atherix AI', 'Atherix Studio'],
   description: 'Atherix.dev is a premium AI automation studio specializing in custom AI agents, intelligent automation systems, and production-grade AI solutions for businesses worldwide.',
   url: 'https://atherix.dev',
   logo: {
