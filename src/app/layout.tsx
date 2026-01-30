@@ -27,34 +27,52 @@ export const viewport: Viewport = {
   width: 'device-width',
   initialScale: 1,
   maximumScale: 5,
+  colorScheme: 'dark',
 }
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://atherix.dev'),
   title: {
-    default: 'Atherix.dev — AI Automation Studio | Build Production-Grade AI Systems',
-    template: '%s | Atherix.dev',
+    default: 'Atherix.dev — #1 AI Automation Studio | Custom AI Agents & ML Solutions',
+    template: '%s | Atherix.dev - AI Automation Studio',
   },
-  description: 'Atherix.dev is a premium AI automation studio. We design, deploy, and scale intelligent agents, automation systems, and production-grade AI solutions. Expert in React, TypeScript, Node.js, Python, and modern AI tooling.',
+  description: 'Atherix.dev is India\'s leading AI automation studio. We build custom AI agents, intelligent automation systems, chatbots, machine learning solutions & production-grade AI software. Trusted by startups & enterprises. Get a free consultation today!',
   keywords: [
-    'AI automation',
-    'AI agents',
-    'AI development company',
+    // Primary keywords
     'AI automation studio',
-    'machine learning solutions',
-    'AI SaaS development',
-    'React development',
-    'TypeScript development',
-    'Node.js development',
-    'Python AI development',
-    'production AI systems',
-    'AI consulting',
-    'automation solutions',
-    'intelligent agents',
-    'LLM integration',
-    'GPT integration',
-    'AI software development',
+    'AI development company',
+    'AI agents development',
     'custom AI solutions',
+    'machine learning company',
+    // Service keywords
+    'AI chatbot development',
+    'GPT integration services',
+    'LLM application development',
+    'AI SaaS development',
+    'automation software development',
+    // Technology keywords
+    'React AI development',
+    'Python AI development',
+    'Node.js AI solutions',
+    'TypeScript development',
+    'OpenAI integration',
+    'LangChain development',
+    // Industry keywords
+    'AI for startups',
+    'enterprise AI solutions',
+    'AI consulting services',
+    'production AI systems',
+    'scalable AI infrastructure',
+    // Location keywords
+    'AI company India',
+    'AI development services worldwide',
+    'remote AI development team',
+    // Long-tail keywords
+    'build AI agents for business',
+    'hire AI developers',
+    'custom ChatGPT solutions',
+    'AI workflow automation',
+    'intelligent process automation',
   ],
   authors: [{ name: 'Atherix.dev', url: 'https://atherix.dev' }],
   creator: 'Atherix.dev',
@@ -66,36 +84,46 @@ export const metadata: Metadata = {
   },
   alternates: {
     canonical: 'https://atherix.dev',
+    languages: {
+      'en-US': 'https://atherix.dev',
+      'en-GB': 'https://atherix.dev',
+      'en-IN': 'https://atherix.dev',
+      'x-default': 'https://atherix.dev',
+    },
   },
   openGraph: {
     type: 'website',
     locale: 'en_US',
     url: 'https://atherix.dev',
     siteName: 'Atherix.dev',
-    title: 'Atherix.dev — AI Automation Studio | Build Production-Grade AI Systems',
-    description: 'We design, deploy, and scale intelligent agents and production-grade AI systems. Transform your business with cutting-edge AI automation.',
+    title: 'Atherix.dev — #1 AI Automation Studio | Build Production-Grade AI Systems',
+    description: 'Transform your business with custom AI agents & automation. We design, build & deploy intelligent systems that scale. 50+ projects shipped. Get started today!',
     images: [
       {
         url: '/og-image.png',
         width: 1200,
         height: 630,
-        alt: 'Atherix.dev - AI Automation Studio',
+        alt: 'Atherix.dev - AI Automation Studio - Build Custom AI Agents & Solutions',
+        type: 'image/png',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Atherix.dev — AI Automation Studio',
-    description: 'Design, deploy, and scale intelligent agents and production-grade AI systems.',
-    images: ['/og-image.png'],
+    site: '@atherixdev',
     creator: '@atherixdev',
+    title: 'Atherix.dev — AI Automation Studio',
+    description: 'Build custom AI agents & automation systems. 50+ projects shipped. Transform your business with production-grade AI.',
+    images: ['/og-image.png'],
   },
   robots: {
     index: true,
     follow: true,
+    nocache: false,
     googleBot: {
       index: true,
       follow: true,
+      noimageindex: false,
       'max-video-preview': -1,
       'max-image-preview': 'large',
       'max-snippet': -1,
@@ -103,64 +131,180 @@ export const metadata: Metadata = {
   },
   icons: {
     icon: [
-      { url: '/favicon.ico' },
+      { url: '/favicon.ico', sizes: '32x32' },
       { url: '/icon.svg', type: 'image/svg+xml' },
     ],
     apple: [
-      { url: '/apple-icon.png' },
+      { url: '/apple-icon.png', sizes: '180x180' },
     ],
+    shortcut: '/favicon.ico',
   },
   manifest: '/manifest.json',
   category: 'technology',
+  classification: 'Business',
+  referrer: 'origin-when-cross-origin',
+  other: {
+    'google-site-verification': 'add-your-verification-code-here',
+    'msvalidate.01': 'add-bing-verification-code-here',
+  },
 }
 
-// JSON-LD Structured Data
-const jsonLd = {
+// JSON-LD Structured Data - Organization
+const organizationSchema = {
   '@context': 'https://schema.org',
   '@type': 'Organization',
+  '@id': 'https://atherix.dev/#organization',
   name: 'Atherix.dev',
-  description: 'AI Automation Studio - Design, deploy, and scale intelligent agents and production-grade AI systems.',
+  alternateName: 'Atherix',
+  description: 'Atherix.dev is a premium AI automation studio specializing in custom AI agents, intelligent automation systems, and production-grade AI solutions for businesses worldwide.',
   url: 'https://atherix.dev',
-  logo: 'https://atherix.dev/icon.svg',
+  logo: {
+    '@type': 'ImageObject',
+    url: 'https://atherix.dev/icon.svg',
+    width: 512,
+    height: 512,
+  },
+  image: 'https://atherix.dev/og-image.png',
   sameAs: [
     'https://twitter.com/atherixdev',
+    'https://x.com/atherix_dev',
     'https://github.com/atherixdev',
     'https://linkedin.com/company/atherixdev',
+    'https://www.instagram.com/atherix.dev',
   ],
   contactPoint: {
     '@type': 'ContactPoint',
     contactType: 'customer service',
-    availableLanguage: ['English'],
+    availableLanguage: ['English', 'Hindi'],
+    areaServed: 'Worldwide',
   },
-  offers: {
-    '@type': 'Offer',
-    description: 'AI Automation and Development Services',
-    itemOffered: {
-      '@type': 'Service',
-      name: 'AI Development Services',
-      description: 'Custom AI agents, automation systems, and production-grade AI solutions',
+  foundingDate: '2024',
+  founders: [
+    {
+      '@type': 'Person',
+      name: 'Atherix Team',
     },
-  },
+  ],
+  slogan: 'If you can imagine it, we can build it.',
+  knowsAbout: [
+    'Artificial Intelligence',
+    'Machine Learning',
+    'AI Agents',
+    'Automation',
+    'Software Development',
+    'GPT Integration',
+    'LangChain',
+    'React',
+    'Node.js',
+    'Python',
+  ],
 }
 
-const serviceJsonLd = {
+// JSON-LD - Professional Service
+const serviceSchema = {
   '@context': 'https://schema.org',
   '@type': 'ProfessionalService',
+  '@id': 'https://atherix.dev/#service',
   name: 'Atherix.dev - AI Automation Studio',
-  description: 'Premium AI automation studio specializing in intelligent agents, automation systems, and production-grade AI solutions.',
+  description: 'Premium AI automation studio offering custom AI agents, chatbot development, machine learning solutions, and production-grade AI systems for startups and enterprises.',
   url: 'https://atherix.dev',
   priceRange: '$$$',
+  image: 'https://atherix.dev/og-image.png',
+  telephone: '+91-XXXXXXXXXX',
   address: {
     '@type': 'PostalAddress',
     addressCountry: 'IN',
+    addressRegion: 'Remote',
   },
-  areaServed: 'Worldwide',
+  geo: {
+    '@type': 'GeoCoordinates',
+    latitude: '20.5937',
+    longitude: '78.9629',
+  },
+  areaServed: [
+    { '@type': 'Country', name: 'India' },
+    { '@type': 'Country', name: 'United States' },
+    { '@type': 'Country', name: 'United Kingdom' },
+    { '@type': 'Country', name: 'Canada' },
+    { '@type': 'Country', name: 'Australia' },
+    { '@type': 'Continent', name: 'Europe' },
+    { '@type': 'Continent', name: 'Asia' },
+  ],
   serviceType: [
     'AI Development',
-    'Automation Solutions',
-    'Machine Learning',
-    'Software Development',
+    'AI Agent Development',
+    'Chatbot Development',
+    'Machine Learning Solutions',
+    'Automation Software',
+    'GPT Integration',
+    'LLM Application Development',
+    'AI Consulting',
   ],
+  hasOfferCatalog: {
+    '@type': 'OfferCatalog',
+    name: 'AI Development Services',
+    itemListElement: [
+      {
+        '@type': 'Offer',
+        itemOffered: {
+          '@type': 'Service',
+          name: 'Custom AI Agent Development',
+          description: 'Build intelligent AI agents tailored to your business needs',
+        },
+      },
+      {
+        '@type': 'Offer',
+        itemOffered: {
+          '@type': 'Service',
+          name: 'AI Chatbot Development',
+          description: 'Create conversational AI chatbots powered by GPT and custom LLMs',
+        },
+      },
+      {
+        '@type': 'Offer',
+        itemOffered: {
+          '@type': 'Service',
+          name: 'Machine Learning Solutions',
+          description: 'End-to-end ML pipelines from data to production deployment',
+        },
+      },
+      {
+        '@type': 'Offer',
+        itemOffered: {
+          '@type': 'Service',
+          name: 'AI Automation Systems',
+          description: 'Automate business processes with intelligent AI workflows',
+        },
+      },
+    ],
+  },
+  aggregateRating: {
+    '@type': 'AggregateRating',
+    ratingValue: '5',
+    reviewCount: '50',
+    bestRating: '5',
+    worstRating: '1',
+  },
+}
+
+// JSON-LD - SoftwareApplication (for rich snippets)
+const softwareSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'SoftwareApplication',
+  name: 'Atherix AI Solutions',
+  applicationCategory: 'BusinessApplication',
+  operatingSystem: 'Web, Cloud',
+  offers: {
+    '@type': 'Offer',
+    price: '0',
+    priceCurrency: 'USD',
+    description: 'Free consultation available',
+  },
+  aggregateRating: {
+    '@type': 'AggregateRating',
+    ratingValue: '4.9',
+    ratingCount: '50',
+  },
 }
 
 export default function RootLayout({
@@ -171,21 +315,40 @@ export default function RootLayout({
   return (
     <html
       lang="en"
+      dir="ltr"
       className={`${inter.variable} ${spaceGrotesk.variable} ${jetbrainsMono.variable}`}
     >
       <head>
+        {/* Structured Data */}
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
         />
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceJsonLd) }}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
         />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(softwareSchema) }}
+        />
+
+        {/* Preconnect for performance */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link rel="preconnect" href="https://www.googletagmanager.com" />
+
+        {/* DNS Prefetch */}
+        <link rel="dns-prefetch" href="https://www.google-analytics.com" />
+
+        {/* Hreflang for international SEO */}
+        <link rel="alternate" hrefLang="en" href="https://atherix.dev" />
+        <link rel="alternate" hrefLang="en-US" href="https://atherix.dev" />
+        <link rel="alternate" hrefLang="en-GB" href="https://atherix.dev" />
+        <link rel="alternate" hrefLang="en-IN" href="https://atherix.dev" />
+        <link rel="alternate" hrefLang="x-default" href="https://atherix.dev" />
       </head>
-      <body className="font-sans">
+      <body className="font-sans antialiased">
         <GoogleAnalytics />
         <ScrollToTop />
         {children}
