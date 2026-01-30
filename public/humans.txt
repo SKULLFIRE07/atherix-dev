@@ -1,0 +1,16 @@
+/* TEAM */
+Company: Atherix.dev
+Site: https://atherix.dev
+Location: India
+
+/* THANKS */
+Next.js: https://nextjs.org
+Tailwind CSS: https://tailwindcss.com
+Framer Motion: https://framer.com/motion
+Vercel: https://vercel.com
+
+/* SITE */
+Last update: 2025/01/31
+Standards: HTML5, CSS3, ES6+
+Components: React, TypeScript
+Software: Next.js 14, Tailwind CSS 3

@@ -5,7 +5,14 @@ const nextConfig = {
   images: {
     unoptimized: true,
   },
-  // Custom domain - no basePath needed
+  // Trailing slashes for better SEO consistency
+  trailingSlash: false,
+  // Compress output
+  compress: true,
+  // Remove x-powered-by header for security
+  poweredByHeader: false,
+  // Generate ETags for caching
+  generateEtags: true,
 }
 
 module.exports = nextConfig
