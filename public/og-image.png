@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" fill="none">
+  <rect width="1200" height="630" fill="#0A0A0A"/>
+
+  <!-- Grid pattern -->
+  <defs>
+    <pattern id="grid" width="60" height="60" patternUnits="userSpaceOnUse">
+      <path d="M 60 0 L 0 0 0 60" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="1"/>
+    </pattern>
+  </defs>
+  <rect width="1200" height="630" fill="url(#grid)"/>
+
+  <!-- Gradient orb -->
+  <circle cx="200" cy="315" r="400" fill="url(#radial1)" opacity="0.3"/>
+  <circle cx="1000" cy="315" r="350" fill="url(#radial2)" opacity="0.2"/>
+
+  <defs>
+    <radialGradient id="radial1">
+      <stop offset="0%" stop-color="white" stop-opacity="0.15"/>
+      <stop offset="100%" stop-color="white" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="radial2">
+      <stop offset="0%" stop-color="white" stop-opacity="0.1"/>
+      <stop offset="100%" stop-color="white" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <!-- Logo A -->
+  <path d="M100 200 L140 200 L180 320 L200 260 L220 320 L260 200 L300 200 L220 420 L180 420 L100 200Z" fill="white"/>
+
+  <!-- Text -->
+  <text x="340" y="290" font-family="system-ui, -apple-system, sans-serif" font-size="72" font-weight="600" fill="white">Atherix.dev</text>
+  <text x="340" y="360" font-family="system-ui, -apple-system, sans-serif" font-size="32" fill="rgba(255,255,255,0.7)">AI Automation Studio</text>
+
+  <!-- Tagline -->
+  <text x="100" y="520" font-family="monospace" font-size="24" fill="rgba(255,255,255,0.5)">$ atherix --build future</text>
+
+  <!-- Bottom line -->
+  <text x="600" y="580" font-family="system-ui, -apple-system, sans-serif" font-size="20" fill="rgba(255,255,255,0.4)" text-anchor="middle">Design, deploy, and scale production-grade AI systems</text>
+</svg>
